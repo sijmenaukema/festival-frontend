@@ -1,0 +1,14 @@
+<div *ngIf="musicSet">
+
+  <h2>{{musicSet.discJockey.name}} Music Sets:</h2>
+  <div>Title: {{musicSet.title}}</div>
+  <div>Genre: {{musicSet.genre}}</div>
+  <div>
+    <label for="music-set-review-rating">Rating:</label>
+    <input id ="music-set-review-rating" [(ngModel)]="musicSet.review.rating" placeholder="no rating has been posted yet">
+  </div>
+  <div>
+    <label for="music-set-review-text">Review:</label>
+    <input id ="music-set-review-text" [(ngModel)]="musicSet.review.text" placeholder="no reviews have been posted yet">
+  </div>
+</div>

@@ -1,1 +1,12 @@
-<p>music-set works!</p>
+<h2>Disc Jockeys </h2>
+<ul class="music-set" >
+  <li *ngFor="let musicSet of musicSets">
+    <button [class.selected] = "musicSet === selectedMusicSet" type="button"
+            (click)="onSelect(musicSet)">
+<!--      <span class = "title">{{musicSet.title}}</span>-->
+      <span class = "artist">{{musicSet.discJockey.name}}</span>
+    </button>
+  </li>
+</ul>
+<app-music-set-detail [musicSet]="selectedMusicSet" ></app-music-set-detail>
+

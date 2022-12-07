@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-disc-jockey',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./disc-jockey.component.css']
 })
 export class DiscJockeyComponent {
+
+  constructor(){ }
+
+  ngOnInit(): void {}
 
 }
