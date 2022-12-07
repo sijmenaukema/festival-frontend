@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {MusicSet} from '../music-set';
-import {MUSICSET} from "../mock-music-set";
+import {MusicSet} from '../interface/music-set';
+import {MUSICSET} from "../interface/mock-music-set";
+import {MusicSetService} from "../service/music-set.service";
 
 @Component({
   selector: 'app-music-set',
@@ -9,12 +10,20 @@ import {MUSICSET} from "../mock-music-set";
 })
 export class MusicSetComponent implements OnInit{
 
-  musicSets = MUSICSET;
+  musicSets: MusicSet[] = [];
   selectedMusicSet? : MusicSet;
 
-  constructor(){ }
+  constructor(private musicSetService: MusicSetService){ }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getMusicSet();
+  }
+
+  // synchronous
+  getMusicSet(): void {
+    this.musicSetService.getMusicSet()
+      .subscribe(musiscSets => this.musicSets = musiscSets );
+  }
 
   onSelect(musicSet: MusicSet) : void {
     this.selectedMusicSet = musicSet;

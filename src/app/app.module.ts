@@ -6,13 +6,15 @@ import { MusicSetComponent } from './music-set/music-set.component';
 import { DiscJockeyComponent } from './disc-jockey/disc-jockey.component';
 import { FormsModule } from "@angular/forms";
 import { MusicSetDetailComponent } from './music-set-detail/music-set-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MusicSetComponent,
     DiscJockeyComponent,
-    MusicSetDetailComponent
+    MusicSetDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

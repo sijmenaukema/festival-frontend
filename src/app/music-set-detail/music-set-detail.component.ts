@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import { MusicSet } from '../music-set';
+import { MusicSet } from '../interface/music-set';
 
 @Component({
   selector: 'app-music-set-detail',
