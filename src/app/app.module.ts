@@ -7,6 +7,9 @@ import { DiscJockeyComponent } from './disc-jockey/disc-jockey.component';
 import { FormsModule } from "@angular/forms";
 import { MusicSetDetailComponent } from './music-set-detail/music-set-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -14,13 +17,15 @@ import { MessagesComponent } from './messages/messages.component';
     MusicSetComponent,
     DiscJockeyComponent,
     MusicSetDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

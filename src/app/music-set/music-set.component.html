@@ -1,12 +1,8 @@
 <h2>Artists</h2>
 <ul class="music-set" >
   <li *ngFor="let musicSet of musicSets">
-    <button [class.selected] = "musicSet === selectedMusicSet" type="button"
-            (click)="onSelect(musicSet)">
-<!--      <span class = "title">{{musicSet.title}}</span>-->
+    <a routerLink="/detail/{{musicSet.id}}">
       <span class = "artist">{{musicSet.discJockey.name}}</span>
-    </button>
+    </a>
   </li>
 </ul>
-<app-music-set-detail [musicSet]="selectedMusicSet" ></app-music-set-detail>
-
