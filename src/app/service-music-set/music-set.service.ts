@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of, tap} from "rxjs";
-import {MusicSet} from "../interface/music-set";
+import {MusicSet} from "../model/music-set";
 import {MessageService} from "../service-message/message.service";
 import {HttpClient} from "@angular/common/http";
 import {catchError} from "rxjs/operators";

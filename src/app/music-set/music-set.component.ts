@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MusicSet} from '../interface/music-set';
+import {MusicSet} from '../model/music-set';
 import {MusicSetService} from "../service-music-set/music-set.service";
 
 @Component({
