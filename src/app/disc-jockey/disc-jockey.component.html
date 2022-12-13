@@ -1,0 +1,14 @@
+<h2>Artists</h2>
+<ul class="music-set" >
+  <li *ngFor="let discJockey of discJockeys">
+    <a routerLink="/discjockeydetail/{{discJockey.id}}">
+      <span class = "artist">{{discJockey.name}}</span>
+    </a>
+  </li>
+  <div>
+    <br>
+    New Artist:
+    <input type="text" min="1" data-ng-required="true" id="new-discjockey.name" #name>
+    <button (click)="saveArtist(name.value)" type="button">save</button>
+  </div>
+</ul>

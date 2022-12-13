@@ -1,11 +1,8 @@
 export class DiscJockey {
-  id: number;
+  id: number | undefined;
   name: string;
-  genre: string;
 
-  constructor(id: number, name: string, genre: string) {
-    this.id = id;
+  constructor( name: string) {
     this.name = name;
-    this.genre = genre;
   }
 }

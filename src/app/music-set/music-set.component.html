@@ -1,8 +1,8 @@
-<h2>Artists</h2>
+<h2>Music Sets</h2>
 <ul class="music-set" >
   <li *ngFor="let musicSet of musicSets">
-    <a routerLink="/detail/{{musicSet.id}}">
-      <span class = "artist">{{musicSet.discJockey.name}}</span>
+    <a routerLink="/musicsetdetail/{{musicSet.id}}">
+      <span class = "artist">{{musicSet.title}}</span>
     </a>
   </li>
 </ul>

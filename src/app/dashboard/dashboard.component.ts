@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MusicSet } from '../model/music-set';
-import { MusicSetService } from '../service-music-set/music-set.service';
+import {Component, OnInit} from '@angular/core';
+import {MusicSet} from '../model/music-set';
+import {MusicSetService} from '../service-music-set/music-set.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +10,9 @@ import { MusicSetService } from '../service-music-set/music-set.service';
 export class DashboardComponent implements OnInit {
   musicSets: MusicSet[] = [];
 
-  constructor(private musicSetService: MusicSetService) { }
+  constructor(
+    private musicSetService: MusicSetService,
+  ){}
 
   ngOnInit(): void {
     this.getMusicSets();

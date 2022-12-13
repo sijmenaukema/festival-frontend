@@ -3,14 +3,16 @@ import { MusicSetComponent } from "./music-set/music-set.component";
 import { RouterModule, Routes } from "@angular/router";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MusicSetDetailComponent } from "./music-set-detail/music-set-detail.component";
-import {DiscJockeyComponent} from "./disc-jockey/disc-jockey.component";
+import { DiscJockeyComponent } from "./disc-jockey/disc-jockey.component";
+import { DiscJockeyDetailComponent } from "./disc-jockey-detail/disc-jockey-detail.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'musicset', component: MusicSetComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: MusicSetDetailComponent },
-  { path: 'discjockey', component: DiscJockeyComponent }
+  { path: 'musicset', component: MusicSetComponent },
+  { path: 'musicsetdetail/:id', component: MusicSetDetailComponent },
+  { path: 'discjockey', component: DiscJockeyComponent },
+  { path: 'discjockeydetail/:id', component: DiscJockeyDetailComponent },
 ]
 
 @NgModule({

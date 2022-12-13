@@ -1,6 +1,5 @@
 <div *ngIf="musicSet">
-  <h2>{{musicSet.discJockey.name}} Music Sets:</h2>
-  <div>Title: {{musicSet.title}}</div>
+  <h2>Music Set {{musicSet.title}} </h2>
   <div>Genre: {{musicSet.genre}}</div>
   <br>
   <li *ngFor="let review of reviews">
@@ -13,7 +12,7 @@
     new review
     <input type="number" max="5" min="0" data-ng-required="true" id="new-review.rating" #rating>
     <input type="text" data-ng-required="true" id="new-review.text" #text>
-    <button (click)="save(musicSet.id, rating.valueAsNumber, text.value)" type="button">save</button>
+    <button (click)="saveReview(musicSet.id, rating.valueAsNumber, text.value)" type="button">save</button>
   </div>
   <button type="button" (click)="goBack()">back</button>
 </div>
