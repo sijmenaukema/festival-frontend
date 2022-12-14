@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MusicSet} from '../model/music-set';
 import {MusicSetService} from "../service-music-set/music-set.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-music-set',
@@ -10,7 +11,9 @@ import {MusicSetService} from "../service-music-set/music-set.service";
 export class MusicSetComponent implements OnInit{
   musicSets: MusicSet[] = [];
 
-  constructor(private musicSetService: MusicSetService){ }
+  constructor(private musicSetService: MusicSetService,
+              private route: ActivatedRoute,
+              ){ }
 
   ngOnInit(): void {
     this.getMusicSets();
@@ -21,4 +24,5 @@ export class MusicSetComponent implements OnInit{
     this.musicSetService.getMusicSets()
       .subscribe(musicSets => this.musicSets = musicSets );
   }
+
 }

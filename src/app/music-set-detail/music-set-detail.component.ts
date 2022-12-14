@@ -43,6 +43,12 @@ export class MusicSetDetailComponent implements OnInit{
     }
   }
 
+  remove(id: number): void {
+    // const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.musicSetService.removeMusicSet(id)
+      .subscribe( ()=> this.goBack() );
+  }
+
   goBack():void {
     this.location.back();
   }

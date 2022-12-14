@@ -6,12 +6,10 @@ import {MusicSetComponent} from './music-set/music-set.component';
 import {DiscJockeyComponent} from './disc-jockey/disc-jockey.component';
 import {FormsModule} from "@angular/forms";
 import {MusicSetDetailComponent} from './music-set-detail/music-set-detail.component';
-import {MessagesComponent} from './messages/messages.component';
 import {AppRoutingModule} from './app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {HttpClientModule} from "@angular/common/http";
-import { DiscJockeyDetailComponent } from './disc-jockey-detail/disc-jockey-detail.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {DiscJockeyDetailComponent} from './disc-jockey-detail/disc-jockey-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +17,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     MusicSetComponent,
     DiscJockeyComponent,
     MusicSetDetailComponent,
-    MessagesComponent,
     DashboardComponent,
     DiscJockeyDetailComponent
   ],

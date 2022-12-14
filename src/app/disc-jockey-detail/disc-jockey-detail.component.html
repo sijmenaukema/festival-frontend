@@ -11,9 +11,11 @@
   <div>
     <br>
     add Music Set
-    <input type="text" max="5" min="0" data-ng-required="true" id="new-music-set.title" #title>
-    <input type="text" data-ng-required="true" id="new-review.text" #text>
-    <button (click)="saveMusicSet( title.value, text.value)" type="button">save</button>
+    <input type="text" max="5" min="0" data-ng-required="true" id="new-music-set.title" #title placeholder="title">
+    <input type="text" data-ng-required="true" id="new-review.text" #genre placeholder="genre">
+  </div>
+  <div>
+    <button (click)="saveMusicSet(title.value, genre.value )" type="button">add</button>
   </div>
   <button type="button" (click)="goBack()">back</button>
 </div>

@@ -20,7 +20,7 @@ export class DiscJockeyDetailComponent {
               private location: Location,
               private discJockeyService: DiscJockeyService,
               private musicSetService: MusicSetService
-  ) {}
+              ) {}
 
   ngOnInit(): void {
     this.getDiscJockeyMusicSets()
@@ -44,7 +44,9 @@ export class DiscJockeyDetailComponent {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.musicSet = Object.assign(new MusicSet(id, title, genre));
     if(this.musicSet) {
+      console.log(this.musicSet);
       this.musicSetService.postMusicSet(this.musicSet)
+        .subscribe( () => this.ngOnInit());
     }
   }
 

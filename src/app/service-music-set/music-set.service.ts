@@ -50,10 +50,18 @@ export class MusicSetService {
   }
 
   postMusicSet(musicSet: MusicSet): Observable<any> {
-    return this.http.post(this.musicSetUrl, musicSet, this.httpOptions).pipe(
-      tap(_ => this.log(`post new music set title=${musicSet.title}`)),
+    return this.http.post(this.musicSetUrl, musicSet, this.httpOptions)
+      .pipe(tap(_ => this.log(`post new music set title=${musicSet.title}`)),
       catchError(this.handleError<any>('post musicSet'))
     );
+  }
+
+  removeMusicSet(id :number): Observable<any>{
+    const url = `${this.musicSetUrl}${id}`;
+    return this.http.delete(url)
+      .pipe(tap(_ => this.log(`delete music set id=${id}`)),
+        catchError(this.handleError<any>('delete musicSet'))
+      );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
