@@ -19,7 +19,7 @@ export class DiscJockeyService {
     this.messageService.add(`DiscJockeyService: $(message)`);
   }
 
-  private discJockeyUrl = 'http://localhost:9090/discjockey/';
+  private discJockeyUrl = 'http://127.0.0.1:9090/discjockey/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

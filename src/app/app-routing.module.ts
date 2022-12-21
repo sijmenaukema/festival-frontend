@@ -7,8 +7,8 @@ import { DiscJockeyComponent } from "./disc-jockey/disc-jockey.component";
 import { DiscJockeyDetailComponent } from "./disc-jockey-detail/disc-jockey-detail.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: DashboardComponent },
   { path: 'musicset', component: MusicSetComponent },
   { path: 'musicsetdetail/:id', component: MusicSetDetailComponent },
   { path: 'discjockey', component: DiscJockeyComponent },

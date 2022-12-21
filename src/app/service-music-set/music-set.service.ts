@@ -19,7 +19,7 @@ export class MusicSetService {
     this.messageService.add(`MusicSetService: $(message)`);
   }
 
-  private musicSetUrl = 'http://localhost:9090/musicset/';
+  private musicSetUrl = 'http://127.0.0.1:9090/musicset/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

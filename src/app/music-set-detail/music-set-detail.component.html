@@ -7,13 +7,13 @@
     {{review.text | json}}
   </li>
   <br>
-  <button type ="button" (click)="remove(musicSet.id)">remove</button>
+  <button class="button" type ="button" (click)="remove(musicSet.id)">remove</button>
   <div>
     <br>
     new review
     <input type="number" max="5" min="0" data-ng-required="true" id="new-review.rating" #rating>
     <input type="text" data-ng-required="true" id="new-review.text" #text placeholder="comment">
-    <button (click)="saveReview(musicSet.id, rating.valueAsNumber, text.value)" type="button">save</button>
+    <button class="button" (click)="saveReview(musicSet.id, rating.valueAsNumber, text.value)" type="button">save</button>
   </div>
-  <button type="button" (click)="goBack()">back</button>
+  <button class="button" type="button" (click)="goBack()">back</button>
 </div>

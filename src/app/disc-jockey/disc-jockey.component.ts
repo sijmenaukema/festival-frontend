@@ -28,7 +28,7 @@ export class DiscJockeyComponent implements OnInit {
   // synchronous
   getDiscJockeys(): void {
     this.discJockeyService.getDiscJockeys()
-      .subscribe(discJockeys => this.discJockeys = discJockeys );
+      .subscribe(discJockeys => this.discJockeys = discJockeys.sort((a,b) => a.name < b.name ? -1 : a.name > b.name ? 1: 0 ))
   }
 
   saveArtist(name: string): void {

@@ -19,7 +19,7 @@ export class ReviewService {
     this.messageService.add(`ReviewService: $(message)`);
   };
 
-  private reviewUrl = 'http://localhost:9091/review/';
+  private reviewUrl = 'http://127.0.0.1:9091/review/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

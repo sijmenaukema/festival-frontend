@@ -5,6 +5,8 @@ import {Location} from '@angular/common';
 import {MusicSetService} from "../service-music-set/music-set.service";
 import {ReviewService} from "../service-review/review.service"
 import {Review} from '../model/review';
+import {DiscJockeyService} from "../service-disc-jockey/disc-jockey.service";
+import {DiscJockey} from "../model/disc-jockey";
 
 @Component({
   selector: 'app-music-set-detail',
@@ -16,10 +18,12 @@ export class MusicSetDetailComponent implements OnInit{
   musicSet: MusicSet | undefined;
   reviews: Review[] | undefined;
   review: Review | undefined;
+  discJockey: DiscJockey | undefined;
 
   constructor(private route: ActivatedRoute,
               private musicSetService: MusicSetService,
               private reviewService: ReviewService,
+              private discJockeyService: DiscJockeyService,
               private location: Location
   ){}
 
@@ -44,7 +48,6 @@ export class MusicSetDetailComponent implements OnInit{
   }
 
   remove(id: number): void {
-    // const id = Number(this.route.snapshot.paramMap.get('id'));
     this.musicSetService.removeMusicSet(id)
       .subscribe( ()=> this.goBack() );
   }
