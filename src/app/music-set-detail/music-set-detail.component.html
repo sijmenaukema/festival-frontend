@@ -1,13 +1,13 @@
 <div *ngIf="musicSet">
-  <h2>Music Set {{musicSet.title}} </h2>
-  <div>Genre: {{musicSet.genre}}</div>
+  <h2>{{musicSet.title}}</h2>
+  <div>Genre: {{musicSet.genre}} <button class="button" type ="button" (click)="remove(musicSet.id)">remove</button></div>
   <br>
   <li *ngFor="let review of reviews">
     {{review.rating | json}}
     {{review.text | json}}
   </li>
   <br>
-  <button class="button" type ="button" (click)="remove(musicSet.id)">remove</button>
+
   <div>
     <br>
     new review

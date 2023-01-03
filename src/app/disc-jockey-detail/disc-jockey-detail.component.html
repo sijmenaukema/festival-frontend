@@ -1,7 +1,7 @@
 <div *ngIf="discJockey">
   <h2>{{discJockey.name}} Music Sets:</h2>
-  <div>Name: {{discJockey.name}}</div>
-  <button class="button" type="button" (click)="remove()">remove</button>
+  <div>Name: {{discJockey.name}} <button class="button" type="button" (click)="remove()">remove</button></div>
+
   <br>
   <li *ngFor="let musicSet of musicSets">
     <a routerLink="/musicsetdetail/{{musicSet.id}}">
@@ -12,10 +12,10 @@
     <br>
     add Music Set
     <input type="text" max="5" min="0" data-ng-required="true" id="new-music-set.title" #title placeholder="title">
-    <input type="text" data-ng-required="true" id="new-review.text" #genre placeholder="genre">
+    <input type="text" data-ng-required="true" id="new-review.text" #genre placeholder="genre"><button class="button" (click)="saveMusicSet(title.value, genre.value )" type="button">add</button>
   </div>
   <div>
-    <button class="button" (click)="saveMusicSet(title.value, genre.value )" type="button">add</button>
+
   </div>
   <button class="button" type="button" (click)="goBack()">back</button>
 </div>

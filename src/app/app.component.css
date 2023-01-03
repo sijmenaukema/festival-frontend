@@ -25,3 +25,7 @@ nav a.active {
   background-color: #04AA6D;
   color: white;
 }
+
+h1 {
+  margin-left: 2.5em;
+}
