@@ -4,6 +4,7 @@ import {MusicSet} from "../model/music-set";
 import {MessageService} from "../service-message/message.service";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
+import {apiUrl} from "../../api.url"; apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class MusicSetService {
     this.messageService.add(`MusicSetService: $(message)`);
   }
 
-  private musicSetUrl = 'http://127.0.0.1:9090/musicset/';
+  private musicSetUrl = `${apiUrl}/musicset/`;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

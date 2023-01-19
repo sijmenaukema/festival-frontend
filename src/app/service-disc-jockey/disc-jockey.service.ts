@@ -4,6 +4,7 @@ import {MessageService} from "../service-message/message.service";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
 import {DiscJockey} from "../model/disc-jockey";
+import {apiUrl} from "../../api.url";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class DiscJockeyService {
     this.messageService.add(`DiscJockeyService: $(message)`);
   }
 
-  private discJockeyUrl = 'http://127.0.0.1:9090/discjockey/';
+  private discJockeyUrl = `${apiUrl}/discjockey/`;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
