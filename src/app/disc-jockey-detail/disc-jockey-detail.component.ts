@@ -27,7 +27,7 @@ export class DiscJockeyDetailComponent {
   }
 
   getDiscJockeyMusicSets(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.discJockeyService.getDiscJockey(id)
       .subscribe(discJockey => this.discJockey = discJockey);
     this.musicSetService.getMusicSetsByDiscJockeyId(id)
@@ -35,13 +35,13 @@ export class DiscJockeyDetailComponent {
   }
 
   remove(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.discJockeyService.removeDiscJockey(id)
       .subscribe( ()=> this.goBack() );
   }
 
   saveMusicSet(title: string, genre: string): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.musicSet = Object.assign(new MusicSet(id, title, genre));
     if(this.musicSet) {
       console.log(this.musicSet);

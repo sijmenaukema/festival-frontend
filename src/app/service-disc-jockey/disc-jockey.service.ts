@@ -34,7 +34,7 @@ export class DiscJockeyService {
       )
   }
 
-  getDiscJockey(id: number): Observable<DiscJockey>{
+  getDiscJockey(id: string): Observable<DiscJockey>{
     const url = `${this.discJockeyUrl}${id}`;
     return this.http.get<DiscJockey>(url)
       .pipe(
@@ -51,7 +51,7 @@ export class DiscJockeyService {
     );
   }
 
-  removeDiscJockey(id: number): Observable<any>{
+  removeDiscJockey(id: string): Observable<any>{
     const url = `${this.discJockeyUrl}${id}`;
     return this.http.delete(url)
       .pipe(

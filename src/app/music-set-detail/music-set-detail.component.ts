@@ -32,14 +32,14 @@ export class MusicSetDetailComponent implements OnInit{
   }
 
   getMusicSet(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.musicSetService.getMusicSet(id)
       .subscribe(musicSet => this.musicSet = musicSet);
     this.reviewService.getReviews(id)
       .subscribe(reviews => this.reviews = reviews);
   }
 
-  saveReview(id: number, rating: number, text: string): void {
+  saveReview(id: string, rating: number, text: string): void {
     this.review = Object.assign(new Review(id, rating, text))
     if(this.review) {
       this.reviewService.postReview(this.review)
@@ -47,7 +47,7 @@ export class MusicSetDetailComponent implements OnInit{
     }
   }
 
-  remove(id: number): void {
+  remove(id: string): void {
     this.musicSetService.removeMusicSet(id)
       .subscribe( ()=> this.goBack() );
   }

@@ -34,7 +34,7 @@ export class MusicSetService {
       )
   }
 
-  getMusicSet(id: number): Observable<MusicSet>{
+  getMusicSet(id: string): Observable<MusicSet>{
     const url = `${this.musicSetUrl}${id}`;
     return this.http.get<MusicSet>(url).pipe(
       tap(_ => this.log(`fetched music set id=${id}`)),
@@ -42,7 +42,7 @@ export class MusicSetService {
   );
   }
 
-  getMusicSetsByDiscJockeyId(id: number): Observable<MusicSet[]>{
+  getMusicSetsByDiscJockeyId(id: string): Observable<MusicSet[]>{
     const url = `${this.musicSetUrl}discjockeyid/${id}`;
     return this.http.get<MusicSet[]>(url).pipe(
       tap(_ => this.log(`fetched music set id=${id}`)),
@@ -57,7 +57,7 @@ export class MusicSetService {
     );
   }
 
-  removeMusicSet(id :number): Observable<any>{
+  removeMusicSet(id :string): Observable<any>{
     const url = `${this.musicSetUrl}${id}`;
     return this.http.delete(url)
       .pipe(tap(_ => this.log(`delete music set id=${id}`)),

@@ -25,7 +25,7 @@ export class ReviewService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  getReviews(id: number): Observable<Review[]>{
+  getReviews(id: string): Observable<Review[]>{
     const url = `${this.reviewUrl}${id}`;
     return this.http.get<Review[]>(url).pipe(
       tap(_ => this.log(`fetched reviews for music set id: ${id}`)),
