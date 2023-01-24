@@ -1,1 +1,4 @@
-Call maken
+add discJockeyId to musicSet V
+create musicSet with uuid and discJockeyID from path V
+create getMusicSetByDiscJcokeyID lambda
+create DynamoDB table

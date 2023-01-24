@@ -5,6 +5,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
 import {DiscJockey} from "../model/disc-jockey";
 import {apiUrl} from "../../api.url";
+import {MusicSet} from "../model/music-set";
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +53,7 @@ export class DiscJockeyService {
   }
 
   removeDiscJockey(id: string): Observable<any>{
-    const url = `${this.discJockeyUrl}${id}`;
+    const url = `${this.discJockeyUrl}{id}?id=${id}`;
     return this.http.delete(url)
       .pipe(
         tap(_ => this.log(`delete disc jockey id=${id}`)),

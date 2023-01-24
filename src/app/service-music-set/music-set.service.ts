@@ -43,7 +43,7 @@ export class MusicSetService {
   }
   //TODO datamodel doesn't support this anymore
   getMusicSetsByDiscJockeyId(id: string): Observable<MusicSet[]>{
-    const url = `${this.musicSetUrl}discjockeyid/${id}`;
+    const url = `${this.musicSetUrl}/discjockey/{id}?id=${id}`;
     return this.http.get<MusicSet[]>(url).pipe(
       tap(_ => this.log(`fetched music set id=${id}`)),
       catchError(this.handleError<MusicSet[]>(`getMusicSet id=${id}`))
@@ -58,7 +58,7 @@ export class MusicSetService {
   }
 
   removeMusicSet(id :string): Observable<any>{
-    const url = `${this.musicSetUrl}${id}`;
+    const url = `${this.musicSetUrl}{id}?id=${id}`;
     return this.http.delete(url)
       .pipe(tap(_ => this.log(`delete music set id=${id}`)),
         catchError(this.handleError<any>('delete musicSet'))

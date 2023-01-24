@@ -1,6 +1,6 @@
 <div *ngIf="musicSet">
   <h2>{{musicSet.title}}</h2>
-  <div>Genre: {{musicSet.genre}} <button class="button" type ="button" (click)="remove(musicSet.id)">remove</button></div>
+  <div>Genre: {{musicSet.genre}} <button class="button" type ="button" (click)="remove(musicSet.id!)">remove</button></div>
   <br>
   <li *ngFor="let review of reviews">
     {{review.rating | json}}
@@ -13,7 +13,7 @@
     new review
     <input type="number" max="5" min="0" data-ng-required="true" id="new-review.rating" #rating>
     <input type="text" data-ng-required="true" id="new-review.text" #text placeholder="comment">
-    <button class="button" (click)="saveReview(musicSet.id, rating.valueAsNumber, text.value)" type="button">save</button>
+    <button class="button" (click)="saveReview(musicSet.id!, rating.valueAsNumber, text.value)" type="button">save</button>
   </div>
   <button class="button" type="button" (click)="goBack()">back</button>
 </div>

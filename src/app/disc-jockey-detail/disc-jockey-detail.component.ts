@@ -41,8 +41,8 @@ export class DiscJockeyDetailComponent {
   }
 
   saveMusicSet(title: string, genre: string): void {
-    const id = String(this.route.snapshot.paramMap.get('id'));
-    this.musicSet = Object.assign(new MusicSet(id, title, genre));
+    const discJockeyId = String(this.route.snapshot.paramMap.get('id'));
+    this.musicSet = Object.assign(new MusicSet( discJockeyId, title, genre));
     if(this.musicSet) {
       console.log(this.musicSet);
       this.musicSetService.postMusicSet(this.musicSet)

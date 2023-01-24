@@ -1,14 +1,14 @@
 import {Review} from "./review";
 
 export class MusicSet {
-  id : string;
+  id? : string | undefined;
+  discJockeyId: string;
   title: string;
   genre: string;
   review: Review | undefined;
 
-
-  constructor(id: string, title: string, genre: string) {
-    this.id = id;
+  constructor(discJockeyId: string, title: string, genre: string,) {
+    this.discJockeyId = discJockeyId;
     this.title = title;
     this.genre = genre;
   }
