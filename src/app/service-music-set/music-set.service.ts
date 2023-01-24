@@ -35,13 +35,13 @@ export class MusicSetService {
   }
 
   getMusicSet(id: string): Observable<MusicSet>{
-    const url = `${this.musicSetUrl}${id}`;
+    const url = `${this.musicSetUrl}{id}?id=${id}`;
     return this.http.get<MusicSet>(url).pipe(
       tap(_ => this.log(`fetched music set id=${id}`)),
     catchError(this.handleError<MusicSet>(`getMusicSet id=${id}`))
   );
   }
-
+  //TODO datamodel doesn't support this anymore
   getMusicSetsByDiscJockeyId(id: string): Observable<MusicSet[]>{
     const url = `${this.musicSetUrl}discjockeyid/${id}`;
     return this.http.get<MusicSet[]>(url).pipe(

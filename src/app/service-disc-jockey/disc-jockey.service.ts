@@ -35,7 +35,7 @@ export class DiscJockeyService {
   }
 
   getDiscJockey(id: string): Observable<DiscJockey>{
-    const url = `${this.discJockeyUrl}${id}`;
+    const url = `${this.discJockeyUrl}{id}?id=${id}`;
     return this.http.get<DiscJockey>(url)
       .pipe(
       tap(_ => this.log(`fetched disc jockey id=${id}`)),
