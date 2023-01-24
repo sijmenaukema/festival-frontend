@@ -1,5 +1,5 @@
 export class DiscJockey {
-  id: number | undefined;
+  id: string | undefined;
   name: string;
 
   constructor( name: string) {
