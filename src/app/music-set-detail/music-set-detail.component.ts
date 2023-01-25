@@ -35,12 +35,12 @@ export class MusicSetDetailComponent implements OnInit{
     const id = String(this.route.snapshot.paramMap.get('id'));
     this.musicSetService.getMusicSet(id)
       .subscribe(musicSet => this.musicSet = musicSet);
-    this.reviewService.getReviews(id)
+    this.reviewService.getReviewsForMusicSet(id)
       .subscribe(reviews => this.reviews = reviews);
   }
 
-  saveReview(id: string, rating: number, text: string): void {
-    this.review = Object.assign(new Review(id, rating, text))
+  saveReview(musicSetId: string, rating: number, text: string): void {
+    this.review = Object.assign(new Review(musicSetId, rating, text))
     if(this.review) {
       this.reviewService.postReview(this.review)
         .subscribe( () => this.ngOnInit());

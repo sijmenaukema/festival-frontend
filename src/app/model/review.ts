@@ -1,10 +1,11 @@
 export class Review {
-  id : string;
+  id? : string;
+  musicSetId: string;
   rating: number ;
   text: string;
 
-  constructor(id: string, rating: number , text: string) {
-    this.id = id;
+  constructor( musicSetId: string, rating: number, text: string) {
+    this.musicSetId = musicSetId;
     this.rating = rating;
     this.text = text;
   }

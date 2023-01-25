@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, of, tap} from "rxjs";
 import {Review} from "../model/review";
 import {catchError} from "rxjs/operators";
+import {apiUrl} from "../../api.url"; apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -18,15 +19,15 @@ export class ReviewService {
   private log(message: string) {
     this.messageService.add(`ReviewService: $(message)`);
   };
-
-  private reviewUrl = 'http://127.0.0.1:9091/review/';
+  //TODO setup API
+  private reviewUrl = `${apiUrl}/review/`;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  getReviews(id: string): Observable<Review[]>{
-    const url = `${this.reviewUrl}${id}`;
+  getReviewsForMusicSet(id: string): Observable<Review[]>{
+    const url = `${this.reviewUrl}musicset/{id}?id=${id}`;
     return this.http.get<Review[]>(url).pipe(
       tap(_ => this.log(`fetched reviews for music set id: ${id}`)),
       catchError(this.handleError<Review[]>(`getReviews id=${id}`))
@@ -35,7 +36,7 @@ export class ReviewService {
 
   postReview(review: Review): Observable<any> {
     return this.http.post(this.reviewUrl, review, this.httpOptions).pipe(
-      tap(_ => this.log(`post review music set id=${review.id}`)),
+      tap(_ => this.log(`post review music set id=${review.musicSetId}`)),
       catchError(this.handleError<any>('post review'))
     );
   }
