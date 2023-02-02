@@ -1,5 +1,0 @@
-add discJockeyId to musicSet V
-create musicSet with uuid and discJockeyID from path V
-create DynamoDB table V
-Create CRUD V
-create getMusicSetByDiscJcokeyID lambda V
